@@ -72,9 +72,12 @@
                     </div>
                     <h3 class="project-title">overdraft risk model migration</h3>
                     <p class="project-description">
-                        transformed overdraft program (1m users, $60m exposure) by leading v2→v3 risk model
-                        migration, conducting backtest analysis to validate balance-based credit-neediness indicators;
-                        reduced loss rates 23% ($1.5m annually) while decreasing customer complaints 20%.
+                        led migration from v2 to v3 risk model for 1m user overdraft program ($60m exposure). conducted
+                        extensive backtesting to identify pockets of low-risk users who could receive higher limits,
+                        expanding program reach while maintaining portfolio health. discovered through analysis that v3
+                        was essentially a scaled-down version of v2, leading to development of custom rebinning solutions
+                        that better captured credit-neediness signals. result: 23% reduction in loss rates ($1.5m annually)
+                        and 20% decrease in customer complaints through more accurate limit assignments.
                     </p>
                     <div class="project-highlights">
                         <div class="highlight">model validation & comparison</div>
@@ -94,9 +97,13 @@
                     </div>
                     <h3 class="project-title">onepay advance credit policy</h3>
                     <p class="project-description">
-                        architected onepay advance credit policy from concept, designing 3-tier risk segmentation
-                        model and limit assignment framework; scaled to 400k users with $1.5b annual draw volume
-                        while maintaining sub-1.2% loss rate through exposure optimization and policy iteration.
+                        architected credit policy from scratch for new cash advance product. used backtesting to identify
+                        which features actually split risk, testing various behavioral and balance-based indicators before
+                        settling on 3-tier segmentation model. developed limit assignment framework using overdraft performance
+                        as a rough proxy, betting that similar user behaviors would translate across products. iterated on
+                        exposure limits and policy rules as real performance data came in. scaled to 400k users with $1.5b
+                        annual draw volume while maintaining sub-1.2% loss rate—validating the initial feature selection and
+                        segmentation approach.
                     </p>
                     <div class="project-highlights">
                         <div class="highlight">behavioral segmentation</div>
@@ -116,9 +123,12 @@
                     </div>
                     <h3 class="project-title">paycheck prediction system</h3>
                     <p class="project-description">
-                        built paycheck cadence classification and prediction system achieving 98% accuracy across
-                        400k daily users, identifying employment patterns and accounting for holidays/irregular dates;
-                        reduced paycheck-based attrition 6% through targeted re-engagement communications.
+                        built system to predict when 400k users would receive their next paycheck. biggest challenge was
+                        data quality—direct deposit timestamps were messy and inconsistent, requiring extensive data prep
+                        and cleaning. developed algorithm based on user's historical paycheck cadence and last observed
+                        payday, then systematically solved edge cases one by one (holidays, pay period shifts, irregular
+                        schedules) until achieving 98% accuracy. enabled targeted re-engagement communications timed to
+                        paycheck arrival, reducing paycheck-based attrition 6%.
                     </p>
                     <div class="project-highlights">
                         <div class="highlight">time series prediction</div>
@@ -138,9 +148,13 @@
                     </div>
                     <h3 class="project-title">williams sonoma card transformation</h3>
                     <p class="project-description">
-                        led cross-functional team (5 members) in transitioning williams sonoma store card to cobrand-only
-                        portfolio as strategic initiative, resulting in 13% reduction in marketing expenses, $4.8m increase
-                        in annual profit, and ~15% increase in portfolio value.
+                        led cross-functional team (5 members) to transition large backbook of store-only cardholders to
+                        updated cobrand card with spend-anywhere capability. key challenge: existing users were riskier
+                        population, so had to balance product expansion with loss rate management. developed segmentation
+                        strategy to identify which users could safely receive broader spending power while maintaining
+                        portfolio health. coordinated across product, risk, and marketing to phase rollout. resulted in
+                        13% reduction in marketing expenses, $4.8m increase in annual profit, and ~15% increase in
+                        portfolio value.
                     </p>
                     <div class="project-highlights">
                         <div class="highlight">real-time monitoring</div>
@@ -160,9 +174,11 @@
                     </div>
                     <h3 class="project-title">kohl's fraud model implementation</h3>
                     <p class="project-description">
-                        evaluated swap-in/swap-out credit performance of new fraud model for kohl's credit card
-                        portfolio in r and oversaw implementation, resulting in 9% charge-off rate reduction and
-                        $2.2m in annual incremental fraud loss reduction, generating $1.6m in annual program profit.
+                        evaluated new fraud model for kohl's credit card portfolio using swap-in/swap-out analysis in r.
+                        compared credit performance of approvals under new model vs. old model to quantify expected impact
+                        before full implementation. after rollout, built monitoring framework to validate predictions and
+                        track ongoing performance. analysis showed 9% charge-off rate reduction and $2.2m in annual fraud
+                        loss reduction, generating $1.6m in annual program profit—confirming pre-implementation projections.
                     </p>
                     <div class="project-highlights">
                         <div class="highlight">risk-return analysis</div>
