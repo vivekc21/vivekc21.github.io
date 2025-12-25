@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek - Product & Analytics</title>
+    <title>Vivek Chinimilli</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -11,15 +11,16 @@
 </head>
 <body>
     <div class="grain-overlay"></div>
-    
+
     <nav class="nav">
         <div class="nav-content">
-            <div class="logo">VC</div>
+            <div class="logo"><a href="index.html">VC</a></div>
             <div class="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="work.html">Work</a>
+                <a href="writing.html">Writing</a>
+                <a href="projects.html">Projects</a>
+                <a href="now.html">Now</a>
             </div>
         </div>
     </nav>
@@ -27,29 +28,15 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-label">Product & Strategy Analyst</div>
+                <div class="hero-label">Hi, I'm Vivek</div>
                 <h1 class="hero-title">
-                    Building data infrastructure<br/>
-                    <span class="gradient-text">for financial products</span>
+                    Product analyst at a neobank,<br/>
+                    <span class="gradient-text">building in fintech</span>
                 </h1>
                 <p class="hero-description">
-                    Product analyst specializing in risk modeling, portfolio analytics, and scaling fintech products.
-                    Currently working on cash advance infrastructure serving millions of users.
+                    I work on risk modeling and product analytics for cash advance and overdraft products.
+                    Outside of work, I'm interested in personal systems, data exploration, and building things that solve real problems.
                 </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-value">$2B</div>
-                        <div class="stat-label">Target Annual Volume</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">SQL + Python</div>
-                        <div class="stat-label">Core Stack</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">Fintech</div>
-                        <div class="stat-label">Domain Focus</div>
-                    </div>
-                </div>
             </div>
             <div class="scroll-indicator">
                 <span>Scroll to explore</span>
@@ -57,192 +44,101 @@
             </div>
         </section>
 
-        <section id="projects" class="projects">
+        <section id="about" class="about">
             <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a product and strategy analyst working at a neobank, focused on building the analytical
+                        infrastructure behind overdraft and cash advance products. My work spans risk modeling,
+                        portfolio analytics, A/B testing, and growth strategy.
+                    </p>
+                    <p>
+                        I regularly conduct sophisticated SQL and Python analyses including cohort studies, risk model
+                        migrations, and performance monitoring. I present findings to directors and the COO while
+                        collaborating across Risk, Product, Engineering, Fraud, and Operations teams.
+                    </p>
+                    <p>
+                        Outside of fintech, I explore NFL analytics, fantasy football optimization, and investment
+                        strategies around energy and AI infrastructure. I'm also interested in personal productivity
+                        systems and building tools that solve real problems.
+                    </p>
+                </div>
+
+                <div class="skills-section">
+                    <h3 class="skills-title">What I'm Working On</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Professional</h4>
+                            <ul>
+                                <li>Cash advance optimization</li>
+                                <li>Risk model development</li>
+                                <li>Product scaling strategies</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Personal</h4>
+                            <ul>
+                                <li>Knowledge management systems</li>
+                                <li>Side projects & experiments</li>
+                                <li>Travel planning (Barcelona, Lisbon, Iceland)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="section-header">
+                <h2 class="section-title">Quick Links</h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="projects-grid">
-                <article class="project-card featured">
+                <article class="project-card">
                     <div class="project-header">
-                        <div class="project-label">Risk Analytics</div>
-                        <div class="project-tech">
-                            <span>SQL</span>
-                            <span>Python</span>
-                            <span>Risk Modeling</span>
-                        </div>
+                        <div class="project-label">Professional</div>
                     </div>
-                    <h3 class="project-title">Overdraft Risk Model Migration</h3>
+                    <h3 class="project-title"><a href="work.html">Work & Resume →</a></h3>
                     <p class="project-description">
-                        Comprehensive analysis of risk model migration from V2 to V3, discovering that V3 essentially 
-                        scaled down V2 without meaningful improvement. Developed rebinning solutions to optimize 
-                        performance and presented findings to executive leadership.
+                        See my professional projects, experience, and technical work in fintech.
                     </p>
-                    <div class="project-highlights">
-                        <div class="highlight">Model validation & comparison</div>
-                        <div class="highlight">Performance optimization</div>
-                        <div class="highlight">Executive reporting</div>
-                    </div>
                 </article>
 
                 <article class="project-card">
                     <div class="project-header">
-                        <div class="project-label">Product Analytics</div>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>SQL</span>
-                            <span>Cohort Analysis</span>
-                        </div>
+                        <div class="project-label">Thoughts</div>
                     </div>
-                    <h3 class="project-title">Cash Advance User Segmentation</h3>
+                    <h3 class="project-title"><a href="writing.html">Writing →</a></h3>
                     <p class="project-description">
-                        Built sophisticated analytics including user segmentation models, repayment behavior analysis, 
-                        and churn prediction systems for cash advance product scaling from $600M to $2B annual volume.
+                        Articles I've written and interesting reads I recommend.
                     </p>
-                    <div class="project-highlights">
-                        <div class="highlight">Behavioral segmentation</div>
-                        <div class="highlight">Churn prediction</div>
-                        <div class="highlight">Growth modeling</div>
-                    </div>
                 </article>
 
                 <article class="project-card">
                     <div class="project-header">
-                        <div class="project-label">Infrastructure</div>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Algorithms</span>
-                            <span>Automation</span>
-                        </div>
+                        <div class="project-label">Personal</div>
                     </div>
-                    <h3 class="project-title">Paycheck Prediction Algorithm</h3>
+                    <h3 class="project-title"><a href="projects.html">Projects →</a></h3>
                     <p class="project-description">
-                        Developed predictive algorithms for paycheck timing and amounts to improve cash advance 
-                        product experience and reduce risk exposure through better advance sizing.
+                        Side projects, experiments, and things I'm building for fun.
                     </p>
-                    <div class="project-highlights">
-                        <div class="highlight">Time series prediction</div>
-                        <div class="highlight">Feature engineering</div>
-                        <div class="highlight">Production deployment</div>
-                    </div>
                 </article>
 
                 <article class="project-card">
                     <div class="project-header">
-                        <div class="project-label">Sports Analytics</div>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Machine Learning</span>
-                            <span>Data Science</span>
-                        </div>
+                        <div class="project-label">Current</div>
                     </div>
-                    <h3 class="project-title">NFL Big Data Bowl</h3>
+                    <h3 class="project-title"><a href="now.html">What I'm Doing Now →</a></h3>
                     <p class="project-description">
-                        NFL player trajectory prediction using machine learning on tracking data. Competed in 
-                        Big Data Bowl competitions analyzing player movement patterns and game outcomes.
+                        What I'm currently focused on in work, life, and learning.
                     </p>
-                    <div class="project-highlights">
-                        <div class="highlight">ML modeling</div>
-                        <div class="highlight">Trajectory prediction</div>
-                        <div class="highlight">Competition entry</div>
-                    </div>
                 </article>
-
-                <article class="project-card">
-                    <div class="project-header">
-                        <div class="project-label">Portfolio Monitoring</div>
-                        <div class="project-tech">
-                            <span>SQL</span>
-                            <span>Dashboards</span>
-                            <span>Monitoring</span>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Portfolio Performance System</h3>
-                    <p class="project-description">
-                        Built comprehensive monitoring systems tracking portfolio health metrics, risk drift, 
-                        and performance KPIs with automated alerting for anomaly detection.
-                    </p>
-                    <div class="project-highlights">
-                        <div class="highlight">Real-time monitoring</div>
-                        <div class="highlight">Anomaly detection</div>
-                        <div class="highlight">Executive dashboards</div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-header">
-                        <div class="project-label">Credit Analytics</div>
-                        <div class="project-tech">
-                            <span>SQL</span>
-                            <span>Statistical Analysis</span>
-                            <span>A/B Testing</span>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Credit Line Optimization</h3>
-                    <p class="project-description">
-                        Analyzed declined credit card applicants with clean credit bureaus at Synchrony Financial, 
-                        comparing performance to marginal approvals to optimize approval strategies.
-                    </p>
-                    <div class="project-highlights">
-                        <div class="highlight">Risk-return analysis</div>
-                        <div class="highlight">Cohort comparison</div>
-                        <div class="highlight">Strategy optimization</div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="section-header">
-                <h2 class="section-title">About</h2>
-                <div class="section-line"></div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a product and strategy analyst working at a neobank, focused on building the analytical 
-                        infrastructure behind overdraft and cash advance products. My work spans risk modeling, 
-                        portfolio analytics, A/B testing, and growth strategy.
-                    </p>
-                    <p>
-                        I regularly conduct sophisticated SQL and Python analyses including cohort studies, risk model 
-                        migrations, and performance monitoring. I present findings to directors and the COO while 
-                        collaborating across Risk, Product, Engineering, Fraud, and Operations teams.
-                    </p>
-                    <p>
-                        Outside of fintech, I explore NFL analytics, fantasy football optimization, and investment 
-                        strategies around energy and AI infrastructure. I'm also interested in personal productivity 
-                        systems and building tools that solve real problems.
-                    </p>
-                </div>
-                
-                <div class="skills-section">
-                    <h3 class="skills-title">Core Competencies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Technical</h4>
-                            <ul>
-                                <li>SQL (Advanced)</li>
-                                <li>Python (Pandas, Scikit-learn)</li>
-                                <li>Risk Modeling</li>
-                                <li>Statistical Analysis</li>
-                                <li>Machine Learning</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Product & Strategy</h4>
-                            <ul>
-                                <li>Cohort Analysis</li>
-                                <li>A/B Testing</li>
-                                <li>Portfolio Management</li>
-                                <li>Executive Reporting</li>
-                                <li>Cross-functional Collaboration</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
@@ -251,11 +147,10 @@
         <div class="footer-content">
             <div class="footer-text">
                 <p>Built with curiosity and attention to detail.</p>
-                <p class="footer-note">Open to interesting opportunities in product analytics and fintech.</p>
             </div>
             <div class="footer-links">
                 <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://github.com/vivekc21" target="_blank">GitHub</a>
                 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
             </div>
         </div>
