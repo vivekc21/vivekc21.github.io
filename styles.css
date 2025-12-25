@@ -18,19 +18,25 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
+    padding-left: 150px;
 }
 
 /* Navigation */
 .nav {
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .logo a {
@@ -42,7 +48,8 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .nav-links a {
@@ -54,6 +61,11 @@ body {
 .nav-links a:hover,
 .nav-links a.active {
     color: #111111;
+}
+
+/* Adjust body for left nav */
+body {
+    padding-left: 150px;
 }
 
 /* Remove grain overlay */
@@ -329,9 +341,28 @@ section {
 @media (max-width: 640px) {
     body {
         padding: 1.5rem 1rem;
+        padding-left: 1rem;
+    }
+
+    .nav {
+        position: static;
+        height: auto;
+        padding: 1rem;
+        flex-direction: row;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 2rem;
+    }
+
+    .nav-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        width: 100%;
     }
 
     .nav-links {
+        flex-direction: row;
         gap: 1rem;
     }
 
