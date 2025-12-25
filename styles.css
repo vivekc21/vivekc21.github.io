@@ -12,8 +12,8 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    background: #ffffff;
-    color: #111111;
+    background: #f5ead6;
+    color: #3e2723;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
@@ -42,7 +42,7 @@ body {
 .logo a {
     font-weight: 600;
     font-size: 1.1rem;
-    color: #111111;
+    color: #3e2723;
     text-decoration: none;
 }
 
@@ -53,14 +53,14 @@ body {
 }
 
 .nav-links a {
-    color: #666666;
+    color: #6d4c41;
     text-decoration: none;
     font-size: 0.95rem;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #111111;
+    color: #3e2723;
 }
 
 /* Adjust body for left nav */
@@ -80,7 +80,7 @@ body {
 
 .hero-label {
     font-size: 1.5rem;
-    color: #111111;
+    color: #3e2723;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -90,19 +90,19 @@ body {
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 1.5rem;
-    color: #444444;
+    color: #5d4037;
 }
 
 /* Remove gradient effect */
 .gradient-text {
     background: none;
     -webkit-text-fill-color: inherit;
-    color: #111111;
+    color: #3e2723;
 }
 
 .hero-description {
     font-size: 1rem;
-    color: #444444;
+    color: #5d4037;
     line-height: 1.7;
     margin-bottom: 2rem;
 }
@@ -130,7 +130,7 @@ section {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #111111;
+    color: #3e2723;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -139,7 +139,7 @@ section {
 .collapse-indicator {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #666666;
+    color: #6d4c41;
     margin-left: 0.5rem;
     user-select: none;
 }
@@ -161,7 +161,7 @@ section {
 }
 
 .project-card {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #d7ccc8;
     padding-bottom: 2rem;
     cursor: pointer;
 }
@@ -205,7 +205,7 @@ section {
 
 .project-label {
     font-size: 0.85rem;
-    color: #666666;
+    color: #6d4c41;
     text-transform: none;
 }
 
@@ -224,11 +224,11 @@ section {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: #111111;
+    color: #3e2723;
 }
 
 .project-title a {
-    color: #111111;
+    color: #3e2723;
     text-decoration: none;
 }
 
@@ -237,9 +237,39 @@ section {
 }
 
 .project-description {
-    color: #444444;
+    color: #5d4037;
     line-height: 1.7;
     margin-bottom: 0.75rem;
+}
+
+/* Tooltip for article descriptions */
+.article-tooltip {
+    position: relative;
+}
+
+.article-tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: #ede0cf;
+    color: #3e2723;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    width: max-content;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 10;
+}
+
+.article-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 .project-highlights {
@@ -250,11 +280,11 @@ section {
 
 .highlight {
     font-size: 0.85rem;
-    color: #666666;
+    color: #6d4c41;
 }
 
 .highlight a {
-    color: #111111;
+    color: #3e2723;
     text-decoration: none;
 }
 
@@ -270,13 +300,13 @@ section {
 }
 
 .about-text p {
-    color: #444444;
+    color: #5d4037;
     line-height: 1.7;
     margin-bottom: 1rem;
 }
 
 .skills-section {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #d7ccc8;
     padding-top: 2rem;
 }
 
@@ -284,7 +314,7 @@ section {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     font-weight: 600;
-    color: #111111;
+    color: #3e2723;
 }
 
 .skills-grid {
@@ -296,7 +326,7 @@ section {
 .skill-category h4 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #111111;
+    color: #3e2723;
     margin-bottom: 0.75rem;
 }
 
@@ -305,7 +335,7 @@ section {
 }
 
 .skill-category li {
-    color: #444444;
+    color: #5d4037;
     margin-bottom: 0.4rem;
     padding-left: 1rem;
     position: relative;
@@ -315,12 +345,12 @@ section {
     content: '–';
     position: absolute;
     left: 0;
-    color: #666666;
+    color: #6d4c41;
 }
 
 /* Footer */
 .footer {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #d7ccc8;
     padding-top: 2rem;
     margin-top: 4rem;
 }
@@ -334,7 +364,7 @@ section {
 }
 
 .footer-text p {
-    color: #666666;
+    color: #6d4c41;
     font-size: 0.9rem;
 }
 
@@ -345,7 +375,7 @@ section {
 }
 
 .footer-note a {
-    color: #666666;
+    color: #6d4c41;
     text-decoration: none;
 }
 
@@ -359,13 +389,13 @@ section {
 }
 
 .footer-links a {
-    color: #666666;
+    color: #6d4c41;
     text-decoration: none;
     font-size: 0.9rem;
 }
 
 .footer-links a:hover {
-    color: #111111;
+    color: #3e2723;
 }
 
 /* Responsive */
@@ -380,7 +410,7 @@ section {
         height: auto;
         padding: 1rem;
         flex-direction: row;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid #d7ccc8;
         margin-bottom: 2rem;
     }
 

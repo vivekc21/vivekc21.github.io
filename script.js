@@ -148,16 +148,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const section = header.closest('.projects');
         const sectionTitle = header.querySelector('.section-title');
 
-        // Add collapse indicator
+        // Add collapse indicator to all media sections
         if (sectionTitle && (
+            sectionTitle.textContent.includes('articles') ||
+            sectionTitle.textContent.includes('podcasts') ||
             sectionTitle.textContent.includes('books') ||
             sectionTitle.textContent.includes('music') ||
             sectionTitle.textContent.includes('movies')
         )) {
             const indicator = document.createElement('span');
             indicator.className = 'collapse-indicator';
-            indicator.textContent = '−';
+            indicator.textContent = '+';
             sectionTitle.appendChild(indicator);
+
+            // Start collapsed by default
+            section.classList.add('collapsed');
 
             header.style.cursor = 'pointer';
             header.addEventListener('click', () => {
