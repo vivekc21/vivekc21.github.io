@@ -148,10 +148,26 @@ section {
 .project-card {
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 2rem;
+    cursor: pointer;
 }
 
 .project-card:last-child {
     border-bottom: none;
+}
+
+.project-card .project-description,
+.project-card .project-highlights {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.project-card.expanded .project-description,
+.project-card.expanded .project-highlights {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 0.75rem;
 }
 
 /* Remove card styling effects */

@@ -120,9 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Add hover effect to project cards
+    // Add collapsible functionality to project cards
     const cards = document.querySelectorAll('.project-card');
     cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('expanded');
+        });
+
         card.addEventListener('mouseenter', () => {
             cards.forEach(otherCard => {
                 if (otherCard !== card) {
