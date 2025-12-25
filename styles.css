@@ -165,7 +165,7 @@ section {
 
 .project-card.expanded .project-description,
 .project-card.expanded .project-highlights {
-    max-height: 500px;
+    max-height: 2000px;
     opacity: 1;
     margin-top: 0.75rem;
 }
