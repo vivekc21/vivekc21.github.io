@@ -131,6 +131,21 @@ section {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collapse-indicator {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #666666;
+    margin-left: 0.5rem;
+    user-select: none;
+}
+
+.projects.collapsed .projects-grid {
+    display: none;
 }
 
 /* Remove decorative line */
@@ -142,7 +157,7 @@ section {
 .projects-grid {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1rem;
 }
 
 .project-card {

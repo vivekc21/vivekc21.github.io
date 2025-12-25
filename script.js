@@ -142,6 +142,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Add collapsible functionality to media sections
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    sectionHeaders.forEach(header => {
+        const section = header.closest('.projects');
+        const sectionTitle = header.querySelector('.section-title');
+
+        // Add collapse indicator
+        if (sectionTitle && (
+            sectionTitle.textContent.includes('books') ||
+            sectionTitle.textContent.includes('music') ||
+            sectionTitle.textContent.includes('movies')
+        )) {
+            const indicator = document.createElement('span');
+            indicator.className = 'collapse-indicator';
+            indicator.textContent = '−';
+            sectionTitle.appendChild(indicator);
+
+            header.style.cursor = 'pointer';
+            header.addEventListener('click', () => {
+                section.classList.toggle('collapsed');
+                indicator.textContent = section.classList.contains('collapsed') ? '+' : '−';
+            });
+        }
+    });
+
     // Counter animation for stats (optional enhancement)
     const animateValue = (element, start, end, duration) => {
         let startTimestamp = null;
