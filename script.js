@@ -154,7 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
             sectionTitle.textContent.includes('podcasts') ||
             sectionTitle.textContent.includes('books') ||
             sectionTitle.textContent.includes('music') ||
-            sectionTitle.textContent.includes('movies')
+            sectionTitle.textContent.includes('movies') ||
+            sectionTitle.textContent.includes('tweets') ||
+            sectionTitle.textContent.includes('concepts') ||
+            sectionTitle.textContent.includes('written')
         )) {
             const indicator = document.createElement('span');
             indicator.className = 'collapse-indicator';
