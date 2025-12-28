@@ -346,8 +346,13 @@ section {
 
 .about-text p {
     color: #5d4037;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+    max-width: 600px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
 .skills-section {
