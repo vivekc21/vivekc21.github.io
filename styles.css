@@ -12,13 +12,14 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    background: #f5ead6;
+    background: #faf6f0;
     color: #3e2723;
     line-height: 1.6;
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
-    padding: 2rem 1.5rem;
-    padding-left: 150px;
+    padding: 3rem 2rem;
+    padding-left: 180px;
+    font-size: 16px;
 }
 
 /* Navigation */
@@ -40,10 +41,20 @@ body {
 }
 
 .logo a {
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
     color: #3e2723;
     text-decoration: none;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid #3e2723;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.logo a:hover {
+    background: #3e2723;
+    color: #faf6f0;
 }
 
 .nav-links {
@@ -56,11 +67,28 @@ body {
     color: #6d4c41;
     text-decoration: none;
     font-size: 0.95rem;
+    transition: color 0.15s ease;
+    position: relative;
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+    color: #3e2723;
+}
+
 .nav-links a.active {
     color: #3e2723;
+    font-weight: 600;
+}
+
+.nav-links a.active::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 16px;
+    background: #3e2723;
 }
 
 /* Adjust body for left nav */
@@ -75,22 +103,38 @@ body {
 
 /* Hero Section */
 .hero {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
+    margin-top: 4rem;
 }
 
 .hero-label {
-    font-size: 1.5rem;
-    color: #3e2723;
-    margin-bottom: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    color: #6d4c41;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.hero-label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #d7ccc8;
 }
 
 .hero-title {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    color: #5d4037;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 2.25rem;
+    color: #3e2723;
+    letter-spacing: -0.015em;
 }
 
 /* Remove gradient effect */
@@ -101,10 +145,11 @@ body {
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #5d4037;
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 2rem;
+    max-width: 560px;
 }
 
 /* Remove stats styling */
@@ -352,7 +397,7 @@ section {
 .footer {
     border-top: 1px solid #d7ccc8;
     padding-top: 2rem;
-    margin-top: 4rem;
+    margin-top: 8rem;
 }
 
 .footer-content {
@@ -364,8 +409,9 @@ section {
 }
 
 .footer-text p {
-    color: #6d4c41;
-    font-size: 0.9rem;
+    color: #8d6e63;
+    font-size: 0.85rem;
+    font-style: italic;
 }
 
 .footer-note {
@@ -389,13 +435,15 @@ section {
 }
 
 .footer-links a {
-    color: #6d4c41;
+    color: #3e2723;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 }
 
 .footer-links a:hover {
-    color: #3e2723;
+    opacity: 0.6;
 }
 
 /* Book List Styles */
@@ -459,17 +507,18 @@ section {
 /* Responsive */
 @media (max-width: 640px) {
     body {
-        padding: 1.5rem 1rem;
-        padding-left: 1rem;
+        padding: 2rem 1.25rem;
+        padding-left: 1.25rem;
     }
 
     .nav {
         position: static;
         height: auto;
-        padding: 1rem;
+        padding: 0;
         flex-direction: row;
         border-bottom: 1px solid #d7ccc8;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
     }
 
     .nav-content {
@@ -483,14 +532,28 @@ section {
     .nav-links {
         flex-direction: row;
         gap: 1rem;
+        flex-wrap: wrap;
     }
 
     .nav-links a {
         font-size: 0.85rem;
     }
 
+    .nav-links a.active::before {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 0;
+    }
+
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .hero-description {
+        font-size: 1rem;
     }
 
     .skills-grid {
@@ -500,5 +563,10 @@ section {
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .logo a {
+        padding: 0.2rem 0.4rem;
+        font-size: 1.1rem;
     }
 }
