@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock In - Vivek Chinimilli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo"><a href="index.html">VC</a></div>
+            <div class="nav-links">
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="work.html">work</a>
+                <a href="media.html">media</a>
+                <a href="bookshelf.html">bookshelf</a>
+                <a href="projects.html">projects</a>
+                <a href="now.html">now</a>
+                <a href="lockin.html" class="active">lock in</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="pomodoro-section">
+            <div class="pomodoro-container">
+                <h1 class="pomodoro-title">lock in</h1>
+
+                <div class="timer-mode">
+                    <button class="mode-btn active" data-mode="work">work</button>
+                    <button class="mode-btn" data-mode="short">short break</button>
+                    <button class="mode-btn" data-mode="long">long break</button>
+                </div>
+
+                <div class="timer-display">
+                    <div class="timer-time" id="timerDisplay">25:00</div>
+                </div>
+
+                <div class="timer-controls">
+                    <button class="control-btn primary" id="startPauseBtn">start</button>
+                    <button class="control-btn secondary" id="resetBtn">reset</button>
+                </div>
+
+                <div class="session-info">
+                    <p class="session-counter">pomodoros completed today: <span id="sessionCount">0</span></p>
+                </div>
+
+                <div class="keyboard-hints">
+                    <span>space: start/pause</span>
+                    <span>r: reset</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="pomodoro.js"></script>
+</body>
+</html>
