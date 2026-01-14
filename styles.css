@@ -105,6 +105,10 @@ body {
 .hero {
     margin-bottom: 6rem;
     margin-top: 4rem;
+    background: #faf6f0;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 2rem;
 }
 
 .hero-label {
@@ -207,7 +211,8 @@ section {
 
 .project-card {
     border-bottom: 1px solid #d7ccc8;
-    padding-bottom: 1.25rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     cursor: pointer;
 }
 
@@ -227,7 +232,7 @@ section {
 .project-card.expanded .project-highlights {
     max-height: 2000px;
     opacity: 1;
-    margin-top: 0.75rem;
+    margin-top: 1.25rem;
 }
 
 /* Remove card styling effects */
@@ -283,8 +288,10 @@ section {
 
 .project-description {
     color: #5d4037;
-    line-height: 1.7;
-    margin-bottom: 0.75rem;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    max-width: 720px;
+    font-size: 1rem;
 }
 
 /* Tooltip for article descriptions */
