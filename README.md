@@ -1,153 +1,75 @@
-# Personal Portfolio - Vivek
+# vivekc21.github.io
 
-A clean, modern portfolio website showcasing technical projects and analytical work.
+My personal site — work, reading, and a few things I'm building.
+Live at **https://vivekc21.github.io**.
 
-## 🚀 Quick Deploy to GitHub Pages
+Hand-written HTML and CSS with no framework, no build step, and no
+dependencies. What's in the repo is exactly what gets served.
 
-### Step 1: Create GitHub Repository
-1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it `yourusername.github.io` (replace `yourusername` with your actual GitHub username)
-3. Make it public
-4. Don't initialize with README (we already have files)
+## Layout
 
-### Step 2: Upload Files
-You can either use Git or GitHub's web interface:
+```
+index.html      home
+about.html      who i am
+work.html       analytics work at onepay and capital one
+media.html      articles, podcasts, music, movies
+bookshelf.html  reading list
+projects.html   side projects
+now.html        what i'm doing at the moment
+lockin.html     pomodoro timer
 
-#### Option A: Using Git (Recommended)
+styles.css      all styling
+script.js       collapsible sections on the media page (the only site-wide JS)
+pomodoro.js     the timer, loaded by lockin.html only
+favicon.svg     VC monogram
+check.sh        site checks - see below
+.nojekyll       tells GitHub Pages to serve the files as-is
+```
+
+Every page shares the same shell: a `.page` flex container holding the `.nav`
+sidebar and a `.content` column. The sidebar is `position: sticky` inside that
+container rather than `fixed` to the viewport, so it stays beside the content
+at any width instead of drifting to the screen edge.
+
+## Running locally
+
 ```bash
-# Navigate to your project folder
-cd path/to/portfolio
-
-# Initialize git
-git init
-
-# Add all files
-git add .
-
-# Commit
-git commit -m "Initial portfolio commit"
-
-# Add remote (replace with your username)
-git remote add origin https://github.com/yourusername/yourusername.github.io.git
-
-# Push to GitHub
-git branch -M main
-git push -u origin main
+python3 -m http.server 8000
+# then open http://localhost:8000
 ```
 
-#### Option B: Using GitHub Web Interface
-1. Go to your new repository
-2. Click "uploading an existing file"
-3. Drag and drop all three files: `index.html`, `styles.css`, `script.js`
-4. Commit the changes
+No install step. Edit a file, reload the page.
 
-### Step 3: Enable GitHub Pages
-1. Go to your repository Settings
-2. Navigate to "Pages" in the left sidebar
-3. Under "Source", select "main" branch
-4. Click Save
-5. Your site will be live at `https://yourusername.github.io` in a few minutes!
+## Checks
 
-## ✏️ Customization Guide
+`check.sh` verifies the things that have actually broken before:
 
-### Update Personal Information
-
-**In `index.html`, search and replace:**
-
-1. **Links** (lines with `href` attributes):
-   - `https://github.com/yourusername` → Your actual GitHub profile
-   - `https://linkedin.com/in/yourprofile` → Your LinkedIn profile
-   - `your.email@example.com` → Your actual email
-
-2. **Name and Content**:
-   - `VK` in the logo → Your initials
-   - Update project descriptions with your actual work
-   - Modify the hero description to match your background
-   - Update the About section with your story
-
-3. **Projects**:
-   - Add/remove project cards as needed
-   - Update tech stacks for each project
-   - Add GitHub links to projects if available
-
-### Styling Customizations
-
-**In `styles.css`:**
-
-1. **Colors** (at the top in `:root`):
-   ```css
-   --accent-primary: #00e5a0;    /* Main accent color */
-   --accent-secondary: #00b8d4;  /* Secondary accent */
-   --bg-primary: #0a0a0f;        /* Main background */
-   ```
-
-2. **Typography**:
-   - Change fonts in the Google Fonts link (in `index.html` head)
-   - Update `font-family` values in CSS
-
-3. **Layout**:
-   - Adjust `max-width` values for different content widths
-   - Modify spacing with padding/margin values
-
-## 📁 File Structure
-
-```
-├── index.html      # Main HTML structure
-├── styles.css      # All styling and animations
-├── script.js       # Interactive features
-└── README.md       # This file
+```bash
+./check.sh                          # against the live site
+./check.sh http://localhost:8000    # against a local server
 ```
 
-## 🎨 Design Features
+It asserts that every page returns 200, that the favicon resolves, that
+description and Open Graph tags are present, that project content is visible
+without a click, that no dead fonts or markup have crept back in, and that all
+external links still resolve.
 
-- **Dark theme** with teal/cyan accents
-- **Smooth scroll animations** reveal content as you scroll
-- **Responsive design** works on mobile, tablet, and desktop
-- **Interactive elements** hover effects and parallax scrolling
-- **Performance optimized** minimal external dependencies
+The important one is the **deploy-freshness canary**, which diffs each live
+page against the working tree. The site once served a seven-month-old build
+because the Pages job was failing silently; this check turns that into a
+visible failure instead of something you notice by accident.
 
-## 🛠️ Tech Stack
+## Deploying
 
-- Pure HTML5, CSS3, and JavaScript (no frameworks)
-- Google Fonts (JetBrains Mono and Lexend)
-- CSS Grid and Flexbox for layouts
-- Intersection Observer API for scroll animations
+Push to `main`. GitHub Pages builds from the repository root.
 
-## 📱 Browser Support
+`.nojekyll` matters more than it looks: without it, Pages runs the site through
+Jekyll, and that is what was failing. If a deploy seems not to land, check the
+build directly rather than guessing:
 
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+```bash
+gh api repos/vivekc21/vivekc21.github.io/pages/builds \
+  --jq '.[0:5][] | "\(.status) | \(.commit[0:7]) | \(.error.message // "ok")"'
+```
 
-## 🔧 Local Development
-
-To test locally:
-1. Open `index.html` directly in a browser, or
-2. Use a local server:
-   ```bash
-   # Python 3
-   python -m http.server 8000
-   
-   # Node.js (with npx)
-   npx serve
-   ```
-3. Visit `http://localhost:8000`
-
-## 🚀 Next Steps
-
-Consider adding:
-- Custom domain (Settings → Pages → Custom domain)
-- Google Analytics for traffic tracking
-- Contact form using Formspree or similar
-- Blog section for articles
-- Dark/light mode toggle
-- More projects as you build them
-
-## 📝 License
-
-Feel free to use this template for your own portfolio. No attribution required.
-
----
-
-**Need help?** Check the [GitHub Pages documentation](https://docs.github.com/en/pages) or open an issue in your repository.
+Then confirm what's actually being served with `./check.sh`.
