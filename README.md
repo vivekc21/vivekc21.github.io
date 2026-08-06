@@ -15,7 +15,6 @@ work.html       analytics work at onepay and capital one
 media.html      articles, podcasts, music, movies
 bookshelf.html  reading list
 projects.html   side projects
-now.html        what i'm doing at the moment
 lockin.html     pomodoro timer
 
 styles.css      all styling
