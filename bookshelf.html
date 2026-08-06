@@ -4,354 +4,357 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookshelf - Vivek Chinimilli</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="what i'm reading now, what i've finished, and the stack i haven't gotten to yet.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vivekc21.github.io/bookshelf.html">
+    <meta property="og:title" content="Bookshelf - Vivek Chinimilli">
+    <meta property="og:description" content="what i'm reading now, what i've finished, and the stack i haven't gotten to yet.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grain-overlay"></div>
-
-    <nav class="nav">
-        <div class="nav-content">
-            <div class="logo"><a href="index.html">VC</a></div>
-            <div class="nav-links">
-                <a href="index.html">home</a>
-                <a href="about.html">about</a>
-                <a href="work.html">work</a>
-                <a href="media.html">media</a>
-                <a href="bookshelf.html" class="active">bookshelf</a>
-                <a href="projects.html">projects</a>
-                <a href="now.html">now</a>
-                <a href="lockin.html">lock in</a>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-label">bookshelf</div>
-                <h1 class="hero-title">
-                    books that shape how i think
-                </h1>
-                <p class="hero-description">
-                    what i'm reading, what i've read, and what's next on the shelf.
-                </p>
-            </div>
-        </section>
-
-        <section class="book-list">
-            <div class="section-header">
-                <h2 class="section-title">currently reading</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="book-items">
-                <div class="book-item">
-                    <span class="book-title">Crime and Punishment</span>
-                    <span class="book-author">by Fyodor Dostoevsky</span>
-                    <span class="book-progress">6% complete</span>
+    <div class="page">
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="logo"><a href="index.html">VC</a></div>
+                <div class="nav-links">
+                    <a href="index.html">home</a>
+                    <a href="about.html">about</a>
+                    <a href="work.html">work</a>
+                    <a href="media.html">media</a>
+                    <a href="bookshelf.html" class="active">bookshelf</a>
+                    <a href="projects.html">projects</a>
+                    <a href="now.html">now</a>
+                    <a href="lockin.html">lock in</a>
                 </div>
             </div>
-        </section>
+        </nav>
 
-        <section class="book-list">
-            <div class="section-header">
-                <h2 class="section-title">completed</h2>
-                <div class="section-line"></div>
-            </div>
+        <div class="content">
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-label">bookshelf</div>
+                    <h1 class="hero-title">
+                        books that shape how i think
+                    </h1>
+                    <p class="hero-description">
+                        what i'm reading, what i've read, and what's next on the shelf.
+                    </p>
+                </div>
+            </section>
 
-            <div class="book-items">
-                <div class="book-item">
-                    <span class="book-title">Atomic Habits</span>
-                    <span class="book-author">by James Clear</span>
+            <section class="book-list">
+                <div class="section-header">
+                    <h2 class="section-title">currently reading</h2>
                 </div>
-                <div class="book-item">
-                    <span class="book-title">Principles</span>
-                    <span class="book-author">by Ray Dalio</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">The Score Takes Care of Itself</span>
-                    <span class="book-author">by Bill Walsh</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">The Power Broker</span>
-                    <span class="book-author">by Robert Caro</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">Black Swan</span>
-                    <span class="book-author">by Nassim Taleb</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">The First 90 Days</span>
-                    <span class="book-author">by Michael D. Watkins</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">The World for Sale</span>
-                    <span class="book-author">by Javier Blas & Jack Farchy</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">The Prize</span>
-                    <span class="book-author">by Daniel Yergin</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">Tomorrow, and Tomorrow, and Tomorrow</span>
-                    <span class="book-author">by Gabrielle Zevin</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">Sea of Tranquility</span>
-                    <span class="book-author">by Emily St. John Mandel</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">Chip War: The Fight for the World's Most Critical Technology</span>
-                    <span class="book-author">by Chris Miller</span>
-                </div>
-                <div class="book-item">
-                    <span class="book-title">The Innovation Stack</span>
-                    <span class="book-author">by Square</span>
-                </div>
-            </div>
-        </section>
 
-        <section class="book-list">
-            <div class="section-header">
-                <h2 class="section-title">to read</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="book-subsection">
-                <h3 class="book-category">Business & Finance</h3>
                 <div class="book-items">
                     <div class="book-item">
-                        <span class="book-title">Poor Charlie's Almanack</span>
+                        <span class="book-title">Crime and Punishment</span>
+                        <span class="book-author">by Fyodor Dostoevsky</span>
+                        <span class="book-progress">6% complete</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="book-list">
+                <div class="section-header">
+                    <h2 class="section-title">completed</h2>
+                </div>
+
+                <div class="book-items">
+                    <div class="book-item">
+                        <span class="book-title">Atomic Habits</span>
+                        <span class="book-author">by James Clear</span>
                     </div>
                     <div class="book-item">
-                        <span class="book-title">Business Adventures</span>
+                        <span class="book-title">Principles</span>
+                        <span class="book-author">by Ray Dalio</span>
                     </div>
                     <div class="book-item">
-                        <span class="book-title">Capital Allocators: How the World's Elite Money Managers Lead and Invest</span>
+                        <span class="book-title">The Score Takes Care of Itself</span>
+                        <span class="book-author">by Bill Walsh</span>
                     </div>
                     <div class="book-item">
-                        <span class="book-title">The Quest</span>
-                        <span class="book-author">by Daniel Yergin</span>
+                        <span class="book-title">The Power Broker</span>
+                        <span class="book-author">by Robert Caro</span>
                     </div>
                     <div class="book-item">
-                        <span class="book-title">Diary of a Very Bad Year</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Business of Expertise</span>
-                        <span class="book-author">by David C. Baker</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Amp It Up</span>
-                        <span class="book-author">by Frank Slootman</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Mom Test</span>
-                        <span class="book-author">by Rob Fitzpatrick</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Barbarians at the Gate</span>
-                        <span class="book-author">by Bryan Burrough & John Helyar</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Trillion Dollar Coach</span>
-                        <span class="book-author">by Eric Schmidt</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Outsiders</span>
-                        <span class="book-author">by William Thorndike</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Fooled by Randomness</span>
+                        <span class="book-title">Black Swan</span>
                         <span class="book-author">by Nassim Taleb</span>
                     </div>
                     <div class="book-item">
-                        <span class="book-title">When Genius Failed</span>
-                        <span class="book-author">by Roger Lowenstein</span>
+                        <span class="book-title">The First 90 Days</span>
+                        <span class="book-author">by Michael D. Watkins</span>
                     </div>
                     <div class="book-item">
-                        <span class="book-title">Supermoney</span>
-                        <span class="book-author">by Adam Smith</span>
+                        <span class="book-title">The World for Sale</span>
+                        <span class="book-author">by Javier Blas & Jack Farchy</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">The Prize</span>
+                        <span class="book-author">by Daniel Yergin</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">Tomorrow, and Tomorrow, and Tomorrow</span>
+                        <span class="book-author">by Gabrielle Zevin</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">Sea of Tranquility</span>
+                        <span class="book-author">by Emily St. John Mandel</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">Chip War: The Fight for the World's Most Critical Technology</span>
+                        <span class="book-author">by Chris Miller</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">The Innovation Stack</span>
+                        <span class="book-author">by Square</span>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="book-subsection">
-                <h3 class="book-category">Psychology & Personal Development</h3>
-                <div class="book-items">
-                    <div class="book-item">
-                        <span class="book-title">The Origins of Virtue</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Influence: Science and Practice</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">How to Talk to Anyone - 92</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Unaccountability Machine: Why Big Systems Make Terrible Decisions</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Book of Life: Daily Meditations</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Striking Thoughts</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Wanting</span>
-                        <span class="book-author">by Luke Burgis</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Mastery</span>
-                        <span class="book-author">by Robert Greene</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The War of Art</span>
-                        <span class="book-author">by Steven Pressfield</span>
+            <section class="book-list">
+                <div class="section-header">
+                    <h2 class="section-title">to read</h2>
+                </div>
+
+                <div class="book-subsection">
+                    <h3 class="book-category">Business & Finance</h3>
+                    <div class="book-items">
+                        <div class="book-item">
+                            <span class="book-title">Poor Charlie's Almanack</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Business Adventures</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Capital Allocators: How the World's Elite Money Managers Lead and Invest</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Quest</span>
+                            <span class="book-author">by Daniel Yergin</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Diary of a Very Bad Year</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Business of Expertise</span>
+                            <span class="book-author">by David C. Baker</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Amp It Up</span>
+                            <span class="book-author">by Frank Slootman</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Mom Test</span>
+                            <span class="book-author">by Rob Fitzpatrick</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Barbarians at the Gate</span>
+                            <span class="book-author">by Bryan Burrough & John Helyar</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Trillion Dollar Coach</span>
+                            <span class="book-author">by Eric Schmidt</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Outsiders</span>
+                            <span class="book-author">by William Thorndike</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Fooled by Randomness</span>
+                            <span class="book-author">by Nassim Taleb</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">When Genius Failed</span>
+                            <span class="book-author">by Roger Lowenstein</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Supermoney</span>
+                            <span class="book-author">by Adam Smith</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="book-subsection">
-                <h3 class="book-category">Science, Technology & Philosophy</h3>
-                <div class="book-items">
-                    <div class="book-item">
-                        <span class="book-title">Surely You're Joking, Mr. Feynman!</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Rational Optimist</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">On the Origin of Species</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Light Water: How the Nuclear Dream Dissolved</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">How to Read</span>
-                        <span class="book-author">by Mortimer Adler</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Sixth Extinction</span>
-                        <span class="book-author">by Elizabeth Kolbert</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Sapiens</span>
-                        <span class="book-author">by Yuval Noah Harari</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Homo Deus</span>
-                        <span class="book-author">by Yuval Noah Harari</span>
+                <div class="book-subsection">
+                    <h3 class="book-category">Psychology & Personal Development</h3>
+                    <div class="book-items">
+                        <div class="book-item">
+                            <span class="book-title">The Origins of Virtue</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Influence: Science and Practice</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">How to Talk to Anyone - 92</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Unaccountability Machine: Why Big Systems Make Terrible Decisions</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Book of Life: Daily Meditations</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Striking Thoughts</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Wanting</span>
+                            <span class="book-author">by Luke Burgis</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Mastery</span>
+                            <span class="book-author">by Robert Greene</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The War of Art</span>
+                            <span class="book-author">by Steven Pressfield</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="book-subsection">
-                <h3 class="book-category">Urban Planning & Design</h3>
-                <div class="book-items">
-                    <div class="book-item">
-                        <span class="book-title">The Death and Life of Great American Cities</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">A Pattern Language</span>
-                        <span class="book-author">by Christopher Alexander</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Jeff Speck books</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Lost Subways of North America</span>
+                <div class="book-subsection">
+                    <h3 class="book-category">Science, Technology & Philosophy</h3>
+                    <div class="book-items">
+                        <div class="book-item">
+                            <span class="book-title">Surely You're Joking, Mr. Feynman!</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Rational Optimist</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">On the Origin of Species</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Light Water: How the Nuclear Dream Dissolved</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">How to Read</span>
+                            <span class="book-author">by Mortimer Adler</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Sixth Extinction</span>
+                            <span class="book-author">by Elizabeth Kolbert</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Sapiens</span>
+                            <span class="book-author">by Yuval Noah Harari</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Homo Deus</span>
+                            <span class="book-author">by Yuval Noah Harari</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="book-subsection">
-                <h3 class="book-category">Fiction & Literature</h3>
-                <div class="book-items">
-                    <div class="book-item">
-                        <span class="book-title">All The King's Men</span>
-                        <span class="book-author">by Robert Penn Warren</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">A River Runs Through It</span>
-                        <span class="book-author">by Norman Maclean</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Under the Volcano</span>
-                        <span class="book-author">by Malcolm Lowry</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Feast of the Goat</span>
-                        <span class="book-author">by Mario Vargas Llosa</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Siddhartha</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Snow Crash</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Overstory</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">A Memory Called Empire</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Parable of the Sower</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Great Believers</span>
-                        <span class="book-author">by Rebecca Makkai</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">The Sellout</span>
-                        <span class="book-author">by Paul Beatty</span>
+                <div class="book-subsection">
+                    <h3 class="book-category">Urban Planning & Design</h3>
+                    <div class="book-items">
+                        <div class="book-item">
+                            <span class="book-title">The Death and Life of Great American Cities</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">A Pattern Language</span>
+                            <span class="book-author">by Christopher Alexander</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Jeff Speck books</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Lost Subways of North America</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="book-subsection">
-                <h3 class="book-category">Writing & Communication</h3>
-                <div class="book-items">
-                    <div class="book-item">
-                        <span class="book-title">Artful Sentences: Syntax as Style</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">Devil In The White City</span>
-                    </div>
-                    <div class="book-item">
-                        <span class="book-title">On Writing Well</span>
-                        <span class="book-author">by William Zinsser</span>
+                <div class="book-subsection">
+                    <h3 class="book-category">Fiction & Literature</h3>
+                    <div class="book-items">
+                        <div class="book-item">
+                            <span class="book-title">All The King's Men</span>
+                            <span class="book-author">by Robert Penn Warren</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">A River Runs Through It</span>
+                            <span class="book-author">by Norman Maclean</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Under the Volcano</span>
+                            <span class="book-author">by Malcolm Lowry</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Feast of the Goat</span>
+                            <span class="book-author">by Mario Vargas Llosa</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Siddhartha</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Snow Crash</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Overstory</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">A Memory Called Empire</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Parable of the Sower</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Great Believers</span>
+                            <span class="book-author">by Rebecca Makkai</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">The Sellout</span>
+                            <span class="book-author">by Paul Beatty</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="book-subsection">
-                <h3 class="book-category">Other</h3>
-                <div class="book-items">
-                    <div class="book-item">
-                        <span class="book-title">Trust Me I'm Lying</span>
-                        <span class="book-author">by Ryan Holiday</span>
+                <div class="book-subsection">
+                    <h3 class="book-category">Writing & Communication</h3>
+                    <div class="book-items">
+                        <div class="book-item">
+                            <span class="book-title">Artful Sentences: Syntax as Style</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">Devil In The White City</span>
+                        </div>
+                        <div class="book-item">
+                            <span class="book-title">On Writing Well</span>
+                            <span class="book-author">by William Zinsser</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-text">
-                <p>built with curiosity and attention to detail.</p>
+                <div class="book-subsection">
+                    <h3 class="book-category">Other</h3>
+                    <div class="book-items">
+                        <div class="book-item">
+                            <span class="book-title">Trust Me I'm Lying</span>
+                            <span class="book-author">by Ryan Holiday</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>built with curiosity and attention to detail.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:vivekc691@gmail.com">email</a>
+                    <a href="https://github.com/vivekc21" target="_blank">github</a>
+                    <a href="https://www.linkedin.com/in/vivekchinimilli/" target="_blank">linkedin</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="mailto:vivekc691@gmail.com">email</a>
-                <a href="https://github.com/vivekc21" target="_blank">github</a>
-                <a href="https://www.linkedin.com/in/vivekchinimilli/" target="_blank">linkedin</a>
-            </div>
+        </footer>
+
         </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>

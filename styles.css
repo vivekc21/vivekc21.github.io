@@ -15,20 +15,35 @@ body {
     background: #faf6f0;
     color: #3e2723;
     line-height: 1.6;
-    max-width: 750px;
+    font-size: 16px;
+}
+
+/*
+ * Nav and content share one centered container. The nav used to be
+ * position:fixed at left:0 (anchored to the viewport) while body was centered
+ * with margin:auto - two different anchors, so a gap opened between them that
+ * grew with screen width (~330px at 1440px).
+ */
+.page {
+    display: flex;
+    gap: 3rem;
+    max-width: 960px;
     margin: 0 auto;
     padding: 3rem 2rem;
-    padding-left: 180px;
-    font-size: 16px;
+}
+
+.content {
+    flex: 1;
+    /* Without this, long unbreakable content can blow out the flex item. */
+    min-width: 0;
 }
 
 /* Navigation */
 .nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    padding: 2rem 1.5rem;
+    position: sticky;
+    top: 3rem;
+    align-self: flex-start;
+    flex: 0 0 130px;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -91,23 +106,10 @@ body {
     background: #3e2723;
 }
 
-/* Adjust body for left nav */
-body {
-    padding-left: 150px;
-}
-
-/* Remove grain overlay */
-.grain-overlay {
-    display: none;
-}
-
 /* Hero Section */
 .hero {
     margin-bottom: 6rem;
     margin-top: 4rem;
-    background: #faf6f0;
-    position: relative;
-    z-index: 1;
     padding-bottom: 2rem;
 }
 
@@ -141,29 +143,12 @@ body {
     letter-spacing: -0.015em;
 }
 
-/* Remove gradient effect */
-.gradient-text {
-    background: none;
-    -webkit-text-fill-color: inherit;
-    color: #3e2723;
-}
-
 .hero-description {
     font-size: 1.1rem;
     color: #5d4037;
     line-height: 1.8;
     margin-bottom: 2rem;
     max-width: 560px;
-}
-
-/* Remove stats styling */
-.hero-stats {
-    display: none;
-}
-
-/* Remove scroll indicator */
-.scroll-indicator {
-    display: none;
 }
 
 /* Sections */
@@ -197,11 +182,6 @@ section {
     display: none;
 }
 
-/* Remove decorative line */
-.section-line {
-    display: none;
-}
-
 /* Projects - Simplified */
 .projects-grid {
     display: flex;
@@ -213,7 +193,6 @@ section {
     border-bottom: 1px solid #d7ccc8;
     padding-bottom: 2rem;
     margin-bottom: 2rem;
-    cursor: pointer;
 }
 
 .project-card:last-child {
@@ -222,26 +201,7 @@ section {
 
 .project-card .project-description,
 .project-card .project-highlights {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
-}
-
-.project-card.expanded .project-description,
-.project-card.expanded .project-highlights {
-    max-height: 2000px;
-    opacity: 1;
     margin-top: 1.25rem;
-}
-
-/* Remove card styling effects */
-.project-card::before {
-    display: none;
-}
-
-.project-card.featured {
-    background: none;
 }
 
 .project-header {
@@ -349,6 +309,20 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+/* now.html uses these to head each section; without a rule they fall back to
+   the browser default h3, which is off the site's type scale. */
+.about-text h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3e2723;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+}
+
+.about-text h3 + p {
+    margin-top: 0;
 }
 
 .about-text p {
@@ -516,16 +490,21 @@ section {
     margin-bottom: 0.75rem;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-    body {
+/*
+ * Responsive. Breakpoint is 768px, not 640px: the sidebar needs
+ * 130px + 3rem gap + ~500px of readable column to work, so the layout has to
+ * stack before it gets that tight.
+ */
+@media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+        gap: 0;
         padding: 2rem 1.25rem;
-        padding-left: 1.25rem;
     }
 
     .nav {
         position: static;
-        height: auto;
+        flex: none;
         padding: 0;
         flex-direction: row;
         border-bottom: 1px solid #d7ccc8;
@@ -718,7 +697,7 @@ section {
 }
 
 /* Responsive adjustments for Pomodoro */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .pomodoro-title {
         font-size: 2rem;
     }

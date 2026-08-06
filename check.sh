@@ -76,7 +76,9 @@ echo "$work_html" | grep -q 'rebinning analysis' \
     || fail 'work.html contains project prose' 'the writing is missing from the served page'
 
 css="$(fetch styles.css)"
-echo "$css" | grep -qE '\.project-card \.project-description' \
+# Look for the collapse mechanism itself (max-height:0 on a card child),
+# not merely a selector mentioning .project-description.
+echo "$css" | tr -d ' \n' | grep -qE '\.project-card\.project-(description|highlights)[^}]*max-height:0' \
     && fail 'project descriptions are not collapsed by default' 'styles.css still has the max-height:0 collapse rule' \
     || pass 'project descriptions are not collapsed by default'
 
@@ -135,7 +137,9 @@ for p in "${PAGES[@]}"; do
     fi
 done
 
-echo "$js" | grep -q 'gradient-mesh' \
+# Match the call, not the word - script.js documents in a comment what used
+# to be here, and that comment should not trip the check.
+echo "$js" | grep -qE "setProperty\(\s*['\"]--gradient-mesh|requestAnimationFrame" \
     && fail 'no gradient-mesh animation loop' 'rAF loop runs every frame setting a variable no CSS reads' \
     || pass 'no gradient-mesh animation loop'
 
