@@ -76,7 +76,16 @@ for p in "${PAGES[@]}"; do
     echo "$html" | grep -q 'property="og:title"' \
         && pass "$p.html has og:title" \
         || fail "$p.html has og:title" 'LinkedIn/Slack preview will be blank'
+    echo "$html" | grep -q 'property="og:image"' \
+        && pass "$p.html has og:image" \
+        || fail "$p.html has og:image" 'shared links render without a thumbnail'
 done
+
+# The preview image itself has to resolve, or the tag is worse than useless.
+og_code="$(status_of og-image.png)"
+[ "$og_code" = "200" ] \
+    && pass 'og-image.png serves 200' \
+    || fail 'og-image.png serves 200' "got $og_code"
 
 # ---------------------------------------------------------------------------
 group 'content is visible without interaction'
