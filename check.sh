@@ -23,9 +23,21 @@ pass() { PASS=$((PASS+1)); printf '  %sok%s   %s\n' "$GREEN" "$OFF" "$1"; }
 fail() { FAIL=$((FAIL+1)); printf '  %sFAIL%s %s\n' "$RED" "$OFF" "$1"; [ $# -gt 1 ] && printf '       %s%s%s\n' "$DIM" "$2" "$OFF"; }
 group() { printf '\n%s\n' "$1"; }
 
-# Fetch a path, bypassing the CDN cache so we always see what is really deployed.
-fetch() { curl -fsSL "$BASE/$1?cb=$RANDOM$RANDOM" 2>/dev/null; }
-status_of() { curl -o /dev/null -s -w '%{http_code}' "$BASE/$1?cb=$RANDOM$RANDOM" 2>/dev/null; }
+CACHE="$(mktemp -d)"
+trap 'rm -rf "$CACHE"' EXIT
+
+# Fetch a path once, bypassing the CDN cache so we always see what is really
+# deployed, then reuse it. Re-requesting per assertion made the run slow and
+# turned any single transient failure into a spurious FAIL.
+fetch() {
+    local safe="${1//\//_}"
+    if [ ! -f "$CACHE/$safe" ]; then
+        curl -fsSL --retry 2 --retry-delay 1 --max-time 30 \
+            "$BASE/$1?cb=$RANDOM$RANDOM" -o "$CACHE/$safe" 2>/dev/null || return 1
+    fi
+    cat "$CACHE/$safe"
+}
+status_of() { curl -o /dev/null -s -w '%{http_code}' --retry 2 "$BASE/$1?cb=$RANDOM$RANDOM" 2>/dev/null; }
 
 printf 'Checking %s\n' "$BASE"
 
