@@ -1,0 +1,11 @@
+# Design iteration screenshots - kept locally, not published.
+# GitHub Pages serves the repo root, so anything committed here goes public.
+screenshot-*.png
+*-v[0-9].png
+*-final.png
+
+# Playwright MCP scratch output
+.playwright-mcp/
+
+# OS cruft
+.DS_Store
