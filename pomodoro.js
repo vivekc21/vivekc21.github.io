@@ -1,6 +1,7 @@
 // Pomodoro Timer
-// Debug logging
-const DEBUG = true;
+// Debug logging - opt in with ?debug in the URL so tracing is always available
+// without shipping a console message every second to everyone else.
+const DEBUG = new URLSearchParams(window.location.search).has('debug');
 const log = (...args) => {
     if (DEBUG) console.log('[Pomodoro]', ...args);
 };
@@ -23,6 +24,10 @@ class PomodoroTimer {
         this.intervalId = null;
         this.sessionCount = 0;
         this.originalTitle = document.title;
+        // Wall-clock deadline the countdown is measured against. Set on start,
+        // cleared on pause. See startTimer() for why this exists.
+        this.endTime = null;
+        this.hasRequestedNotifications = false;
 
         // DOM elements
         this.timerDisplay = document.getElementById('timerDisplay');
@@ -74,9 +79,6 @@ class PomodoroTimer {
                 this.resetTimer();
             }
         });
-
-        // Request notification permission on load
-        this.requestNotificationPermission();
 
         // Update display
         this.updateDisplay();
@@ -133,6 +135,7 @@ class PomodoroTimer {
 
         this.currentMode = mode;
         this.timeRemaining = this.modes[mode] * 60;
+        this.endTime = null;
 
         // Update UI
         this.modeButtons.forEach(btn => {
@@ -155,29 +158,49 @@ class PomodoroTimer {
     startTimer() {
         log('Starting timer');
 
+        // Asking for notification permission needs a user gesture - browsers
+        // ignore or auto-block prompts fired on page load.
+        this.requestNotificationPermission();
+
         this.isRunning = true;
-        this.startPauseBtn.textContent = 'pause';
+        if (this.startPauseBtn) this.startPauseBtn.textContent = 'pause';
+
+        /*
+         * Count down against a wall-clock deadline rather than by decrementing
+         * once per interval. Browsers throttle timers in background tabs
+         * (often to once a minute), so a counter-based timer runs long by
+         * exactly the amount of time you spent in another tab - which for a
+         * "lock in" timer is most of the session.
+         */
+        this.endTime = Date.now() + this.timeRemaining * 1000;
 
         this.intervalId = setInterval(() => {
-            this.timeRemaining--;
-            log('Tick, time remaining:', this.timeRemaining);
+            this.timeRemaining = Math.max(0, Math.round((this.endTime - Date.now()) / 1000));
 
             if (this.timeRemaining <= 0) {
                 log('Timer completed!');
                 this.timerComplete();
+                return;
             }
 
             this.updateDisplay();
-        }, 1000);
+        }, 250);
 
-        log('Timer started with intervalId:', this.intervalId);
+        log('Timer started, deadline:', new Date(this.endTime).toISOString());
     }
 
     pauseTimer() {
         log('Pausing timer');
 
+        // Freeze the remaining time against the deadline before dropping it,
+        // so resuming picks up exactly where the clock actually is.
+        if (this.isRunning && this.endTime) {
+            this.timeRemaining = Math.max(0, Math.round((this.endTime - Date.now()) / 1000));
+        }
+        this.endTime = null;
+
         this.isRunning = false;
-        this.startPauseBtn.textContent = 'start';
+        if (this.startPauseBtn) this.startPauseBtn.textContent = 'start';
 
         if (this.intervalId) {
             clearInterval(this.intervalId);
@@ -250,17 +273,25 @@ class PomodoroTimer {
     }
 
     async requestNotificationPermission() {
-        log('Requesting notification permission');
+        // Only ever ask once per page load, and only from a click.
+        if (this.hasRequestedNotifications) return;
+        this.hasRequestedNotifications = true;
 
-        if ('Notification' in window && Notification.permission === 'default') {
-            try {
-                const permission = await Notification.requestPermission();
-                log('Notification permission:', permission);
-            } catch (error) {
-                log('Error requesting notification permission:', error);
-            }
-        } else {
-            log('Current notification permission:', Notification?.permission);
+        if (!('Notification' in window)) {
+            log('Notifications unsupported in this browser');
+            return;
+        }
+
+        if (Notification.permission !== 'default') {
+            log('Notification permission already set:', Notification.permission);
+            return;
+        }
+
+        try {
+            const permission = await Notification.requestPermission();
+            log('Notification permission:', permission);
+        } catch (error) {
+            log('Error requesting notification permission:', error);
         }
     }
 
@@ -277,8 +308,8 @@ class PomodoroTimer {
 
             const notification = new Notification(title, {
                 body: body,
-                icon: '/favicon.ico',
-                badge: '/favicon.ico',
+                icon: '/favicon.svg',
+                badge: '/favicon.svg',
                 tag: 'pomodoro-timer',
                 requireInteraction: false
             });
