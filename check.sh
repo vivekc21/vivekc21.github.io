@@ -13,7 +13,7 @@ BASE="${1:-https://vivekc21.github.io}"
 BASE="${BASE%/}"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-PAGES=(index about work media bookshelf projects now lockin)
+PAGES=(index about work media bookshelf projects lockin)
 
 PASS=0
 FAIL=0
@@ -119,7 +119,7 @@ group 'deploy freshness (staleness canary)'
 # This is the check that would have caught the site sitting on a January build
 # for seven months. If it fails, GitHub Pages is not serving current main.
 stale=0
-for f in index about work media bookshelf projects now lockin; do
+for f in "${PAGES[@]}"; do
     if [ -f "$REPO_DIR/$f.html" ]; then
         live="$(fetch "$f.html")"
         if [ -z "$live" ]; then
@@ -167,6 +167,26 @@ echo "$js" | grep -qE "setProperty\(\s*['\"]--gradient-mesh|requestAnimationFram
 echo "$js" | grep -q 'scrollIndicator.style' \
     && fail 'no scrollIndicator null deref' 'throws TypeError on the 7 pages without a .scroll-indicator' \
     || pass 'no scrollIndicator null deref'
+
+# ---------------------------------------------------------------------------
+group 'internal links resolve'
+# Catches the case where a page is deleted but a nav link to it survives on
+# the other pages - a dead link that looks fine until someone clicks it.
+internal=()
+while IFS= read -r line; do
+    internal+=("$line")
+done < <(grep -ho 'href="[^"#:]*\.html"' "$REPO_DIR"/*.html \
+    | sed 's/href="//; s/"$//' | sort -u)
+
+for target in "${internal[@]}"; do
+    if [ -f "$REPO_DIR/$target" ]; then
+        pass "internal link $target"
+    else
+        # Name the pages still pointing at the missing file.
+        srcs="$(grep -l "href=\"$target\"" "$REPO_DIR"/*.html | xargs -n1 basename | tr '\n' ' ')"
+        fail "internal link $target" "no such file; still linked from: $srcs"
+    fi
+done
 
 # ---------------------------------------------------------------------------
 group 'external links resolve'
