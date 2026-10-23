@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>Tesla login: copy code</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:40rem}textarea{width:100%;height:7rem}button{font-size:1rem;padding:.5rem 1rem}</style>
+</head><body>
+<h1>Tesla login received</h1>
+<p>Copy this and paste it into <code>tesla exchange '...'</code> (or send it to Grok Bot). It is single-use, expires in minutes, and is useless without the app's client secret. This page sends nothing anywhere.</p>
+<textarea id="u" readonly></textarea>
+<p><button onclick="navigator.clipboard.writeText(document.getElementById('u').value)">Copy</button></p>
+<p id="err" style="color:#b00"></p>
+<script>
+  var q = new URLSearchParams(location.search);
+  document.getElementById('u').value = location.href;
+  if (q.get('error')) document.getElementById('err').textContent = 'Error: ' + q.get('error') + ' ' + (q.get('error_description') || '');
+</script>
+</body></html>
